@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ["*"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
-# CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://django-server-production-560e.up.railway.app"]
 
 # Application definition
 
@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ["PGDATABASE"],
         'USER': os.environ["PGUSER"],
         'PASSWORD': os.environ["PGPASSWORD"],
         'HOST': os.environ["PGHOST"],
         'PORT': os.environ["PGPORT"],
+        'PASSWORD': os.environ['DB_PASSWORD'],
     }
 }
 
